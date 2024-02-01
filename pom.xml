@@ -16,18 +16,12 @@
         <javafx.version>20.0.2</javafx.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>terminalfx-repo</id>
-            <url>https://github.com/javaterminal/terminalfx/raw/master/releases</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>com.kodedu.terminalfx</groupId>
             <artifactId>terminalfx</artifactId>
             <version>1.2.0</version>
+            <systemPath>${project.basedir}/libs/terminalfx-1.2.0.jar</systemPath>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx -->
         <!--JavaFX 的富文本区域-->
