@@ -120,6 +120,7 @@ public class ApplicationManager {
                 instance.checkFileTabStatus(instance.getSelected());
             }
         });
+        primaryStage.setOnCloseRequest(event -> System.exit(0));
     }
 
     /**
