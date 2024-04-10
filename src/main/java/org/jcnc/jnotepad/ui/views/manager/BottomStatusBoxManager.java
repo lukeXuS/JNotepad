@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import org.jcnc.jnotepad.api.core.views.manager.builder.BottomStatusBoxButtonBuilder;
 import org.jcnc.jnotepad.app.common.constants.TextConstants;
@@ -20,7 +22,6 @@ import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.nio.charset.Charset;
 
-import static org.kordamp.ikonli.antdesignicons.AntDesignIconsFilled.LOCK;
 import static org.kordamp.ikonli.antdesignicons.AntDesignIconsFilled.UNLOCK;
 
 /**
@@ -220,17 +221,27 @@ public class BottomStatusBoxManager {
      * @param tab  the tab to update the read-only property for
      * @param tabs the list of tabs in the center tab pane
      */
+
+
+
+
     public void updateReadOnlyProperty(CenterTab tab, ObservableList<Tab> tabs) {
         Button readOnlyButton = BOTTOM_STATUS_BOX.getReadOnlyButton();
+        readOnlyButton.setStyle("-fx-background-color: rgb(230, 230, 230);");
         readOnlyButton.setVisible(!tabs.isEmpty());
-        FontIcon icon;
+
+        ImageView icon;
+        double iconSize = 20; // 修改圖標大小
         if (tab.getTextCodeArea().isEditable()) {
-            icon = FontIcon.of(UNLOCK);
-            readOnlyButton.setGraphic(icon);
+            icon = new ImageView(new Image("file:src/main/resources/jcnc/app/images/unlock.png"));
         } else {
-            icon = FontIcon.of(LOCK);
-            readOnlyButton.setGraphic(icon);
+            icon = new ImageView(new Image("file:src/main/resources/jcnc/app/images/lock.png"));
         }
+        icon.setFitWidth(iconSize); // 設置圖標寬度
+        icon.setFitHeight(iconSize); // 設置圖標高度
+        readOnlyButton.setGraphic(icon);
+
         tab.getReadOnly().setSelected(!tab.getTextCodeArea().isEditable());
     }
+
 }
