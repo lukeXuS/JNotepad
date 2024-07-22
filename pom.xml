@@ -15,7 +15,20 @@
         <junit.version>5.9.2</junit.version>
         <javafx.version>20.0.2</javafx.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>terminalfx-repo</id>
+            <url>https://github.com/javaterminal/terminalfx/raw/master/releases</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>com.kodedu.terminalfx</groupId>
+            <artifactId>terminalfx</artifactId>
+            <version>1.2.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx -->
         <!--JavaFX 的富文本区域-->
         <dependency>

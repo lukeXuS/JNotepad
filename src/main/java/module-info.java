@@ -19,6 +19,7 @@ module org.jcnc.jnotepad {
     requires java.desktop;
     requires org.commonmark;
     requires javafx.web;
+    requires com.kodedu.terminalfx;
 
     exports org.jcnc.jnotepad;
     exports org.jcnc.jnotepad.model.enums;
